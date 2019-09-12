@@ -1,16 +1,26 @@
-<%- include('fragmentos/head'); %> 
-<!-- Navbar -->
+
+<html lang="en">
+  <%- include('fragmentos/head'); %> 
+<body class="index-page sidebar-collapse">
+  <!-- Navbar -->
   <%- include('fragmentos/navbar'); %> 
-<div style="background-size: cover;" class="col-md-8 ml-auto mr-auto" id="carousel">
+
+    <div class="section section-buttons section section-dark">
+       
+       <!--   
+
+-->
+ <div style="background-size: cover;" class="bg-transparent" id="carousel">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <div class="card page-carousel">
+          <div class="col-md-10 ml-auto mr-auto">
+            <div class="card page-carousel card-raised">
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
@@ -53,3 +63,23 @@
         </div>
       </div>
     </div>
+              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                <a class="nav-link h3" title="Síguenos en Instagram" data-placement="right" href="https://www.instagram.com/yanuadiscobar/" target="_blank">
+              <i class="fa fa-instagram "></i>
+            </a>
+            <a class="nav-link h3" title="Síguenos en Facebook" data-placement="left" href="https://www.facebook.com/Yanua-Bar-Discoteca-279815565372413" target="_blank">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+
+              </ul>
+              <span class="copyright text-center">©
+              <script>
+                document.write(new Date().getFullYear())
+              </script> 
+              <i class="fa fa-heart heart"></i>
+
+            </span>
+</div>
+</body>
+
+</html>
