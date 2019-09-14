@@ -8,15 +8,28 @@
     <div class="section section-buttons section section-dark">
          	
        <!--   
-
+<br><br>
 -->
- <div> 
-        <form class="text-center ">
-      <video class=" img-fluid" src="assets\img\videos\v1.mp4" poster="presentacion.jpg" controls="" autoplay="" muted="" loop=""></video>
-      <video class=" img-fluid" src="assets\img\videos\v2.mp4" poster="presentacion.jpg" controls="" autoplay="" muted="" loop=""></video>
-      <video class=" img-fluid" src="assets\img\videos\v3.mp4" poster="presentacion.jpg" controls="" autoplay="" muted="" loop=""></video>
-      </form>
+
+<br><br>
+  <h2 class="text-center text-white">Videos</h2>
+
+<div class="container  col-md-9">
+
+<br>
+
+ <div class="row text-center img-fluid"> 
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v1.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v2.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v3.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v4.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v5.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v6.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v7.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      <video class="col-md-4 row img-fluid mr-auto ml-auto" src="assets\img\videos\v8.mp4" poster="assets\img\face.jpg" controls="" loop=""></video>
+      
        </div>
+       <div class="container mr-auto ml-auto col-md-2 text-center">
               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <a class="nav-link h3" title="Síguenos en Instagram" data-placement="right" href="https://www.instagram.com/yanuadiscobar/" target="_blank">
               <i class="fa fa-instagram "></i>
@@ -33,7 +46,29 @@
               <i class="fa fa-heart heart"></i>
 
             </span>
-</div>
+</div></div>
+</div><script> 
+  var n=0;
+var video = document.getElementById("videoPlayer");
+function playPause() { 
+    if (video.paused) 
+        video.play(); 
+    else 
+        video.pause(); 
+}
+function reload() { 
+   video.load(); 
+}
+function makeLarge() { 
+    video.width = 1000; 
+}
+function makeSmall() { 
+    video.width = 250; 
+} 
+function makeNormal() { 
+    video.width = 500; 
+} 
+</script>
 </body>
 
 </html>
