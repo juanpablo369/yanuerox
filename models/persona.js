@@ -11,11 +11,6 @@ var PersonaSchema = Schema({
     foto: String,
     correo: String,
     secretToken: String,
-    clave: String,
-    activo: {
-        type: Boolean,
-        default: false
-    }
-}, false);
+    }, false);
 
 module.exports = mongoose.model("Persona", PersonaSchema);
