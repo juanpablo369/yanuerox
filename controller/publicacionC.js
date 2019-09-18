@@ -5,9 +5,10 @@ var fs = require('fs-extra');
 var path = require('path');
 var md5 = require('md5');
 var moment = require('moment');
+//var flash = require('connect-flash');
 var Publicacion = require('../models/publicacion');
 var Comentario = require('../models/comentario');
-var Persona = require('../models/persona');
+//var Persona = require('../models/persona');
 
 class PublicacionController {
     /**
@@ -23,26 +24,61 @@ class PublicacionController {
     guardar(req, res) {
 
 		//Persona.findOne({}, (err, person)=>{
-      new Publicacion({
+    new Publicacion({
              id: new mongoose.Types.ObjectId(),
-                      
-              publish: req.body.publicacion,
-              
-              external_id: uuidv4(),
-              persona_id: req.body.id
+             nombre: req.body.nombre,
+             correo: req.body.correo,
+             publish: req.body.publication,
+             external_id: uuidv4(),
           }).save(function (err, newPublicacion) {
-               
               if(err) {
           req.flash('error', 'No se pudo subir su publicacion!');
           res.send(err);
               }else if(newPublicacion) {
           req.flash('info', 'Publicacion subida exitosamente!');
-                res.redirect('/principal');           
-        }
-                      
+                res.redirect('/coments');           
+        }   
           });
     //});
-    }
+    };
+
+ visualizar(req, res) {
+    
+    Publicacion.find({}, (error, publish) => {
+      res.render('coments', {publish, title: 'Yanua - Coments', 
+      sesion: false,
+      msg: {error: req.flash('error'), info: req.flash('info')},
+      });
+    }).sort({ timestamp: -1 });
+    };
+
+
+    verPublicacion(req, res) {
+    Publicacion.findOne({external_id: req.params.external}, (error, publish) => {
+      if(publish){
+        publish.views = publish.views + 1;
+        publish.save();
+        Comentario.find({publish_id: req.params.external}, (error, comment) => {
+          var timeago = moment(publish.timestamp).startOf('minute').fromNow();
+          res.render('usuario/publicacion', {timeago, publish, comment, title: publish.title});
+        });
+      }else{
+        res.redirect('/principal');
+      }
+    });
+    };
+
+       /**
+     * 
+     * @api {get} /principal Visualizacion de las publicaciones
+     * @apiName visualizar
+     * @apiGroup PublicacionController
+     *
+     * @apiParam {req} req el objeto de peticion
+     * @apiParam {res} res Devuelve la pagina y lista de publicaciones y archivos subidos
+     * 
+     */
+   
     /**
      * 
      * @api {post} /publicarFile Permite subir archivos
@@ -52,7 +88,7 @@ class PublicacionController {
      * @apiParam {req} req el objeto de peticion
      * @apiParam {res} res Devuelve la pagina y lista de archivos subidos 
      * 
-     */
+     
     guardarFile(req, res) {
 		
 		var imgUrl = uuidv4();
@@ -63,9 +99,7 @@ class PublicacionController {
 
 		new Publicacion({
 			id: new mongoose.Types.ObjectId(),
-            
-      title: req.body.title,
-			description: req.body.description,
+      description: req.body.description,
 			filename: imgUrl + ext,
 			ext: ext,
 					
@@ -75,31 +109,12 @@ class PublicacionController {
             if(err) {
 				res.send(err);
             }else if(newPublicacion) {
-			    res.redirect('/principal');           
+			    res.redirect('/commentarios');           
 			}
                     
         });
-    }
-    /**
-     * 
-     * @api {get} /principal Visualizacion de las publicaciones
-     * @apiName visualizar
-     * @apiGroup PublicacionController
-     *
-     * @apiParam {req} req el objeto de peticion
-     * @apiParam {res} res Devuelve la pagina y lista de publicaciones y archivos subidos
-     * 
-     */
-    visualizar(req, res) {
-		
-		Publicacion.find({}, (error, publish) => {
-      res.render('main', {publish, title: 'Uneleate', 
-      sesion: true,
-        msg: {error: req.flash('error'), info: req.flash('info')},
-        
-      });
-		}).sort({ timestamp: -1 });
-    }
+    };
+ */
     /**
      * 
      * @api {get} /publicacion/:external Visualizacion personalizada de cada publicacion
@@ -109,7 +124,6 @@ class PublicacionController {
      * @apiParam {req} req el objeto de peticion
      * @apiParam {res} res Devuelve la pagina y la publicacion a la cual queremos acceder
      * 
-     */
     verPersona(req, res) {
       Persona.findOne({}, (error, logeado) => {
         if(logeado){
@@ -124,21 +138,9 @@ class PublicacionController {
           res.redirect('/principal');
         }
       });
-      }
-    verPublicacion(req, res) {
-		Publicacion.findOne({external_id: req.params.external}, (error, publish) => {
-			if(publish){
-				publish.views = publish.views + 1;
-				publish.save();
-				Comentario.find({publish_id: req.params.external}, (error, comment) => {
-					var timeago = moment(publish.timestamp).startOf('minute').fromNow();
-					res.render('usuario/publicacion', {timeago, publish, comment, title: publish.title});
-				});
-			}else{
-				res.redirect('/principal');
-			}
-		});
-    }
+      };
+     */
+
 	
     comment (req, res) {
       Publicacion.findOne({external_id: req.params.external},(err, publica)=>{

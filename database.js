@@ -1,5 +1,5 @@
 module.exports = {
   database: {
-    URI: 'mongodb://localhost/redpassport'
+    URI: 'mongodb://localhost/yanuadb'
   }
 };
