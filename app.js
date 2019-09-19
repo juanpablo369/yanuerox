@@ -13,13 +13,20 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-// database
+
+
+
+
+// database//
 const { database } = require('./database');
 mongoose.connect(database.URI, {
   useNewUrlParser: true    
 })
   .then(db => console.log('base de datos conectada'))
   .catch(err => console.log(err));
+
+
+
 require('./config/passport');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
