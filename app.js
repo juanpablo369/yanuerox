@@ -15,7 +15,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 // database
 const { database } = require('./database');
-mongoose.connect(database.URI-w, {
+mongoose.connect(database.URI, {
   useNewUrlParser: true    
 })
   .then(db => console.log('base de datos conectada'))
