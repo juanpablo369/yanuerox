@@ -45,7 +45,10 @@ class PublicacionController {
  visualizar(req, res) {
     
     Publicacion.find({}, (error, publish) => {
-      res.render('coments', {publish, title: 'Yanua - Coments', 
+      var moment = require('moment');
+      var ago = moment(publish.timestamp).startOf('minute').fromNow();
+
+      res.render('coments', {ago, publish, title: 'Yanua - Coments', 
       sesion: false,
       msg: {error: req.flash('error'), info: req.flash('info')},
       });

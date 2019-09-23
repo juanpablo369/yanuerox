@@ -3,6 +3,10 @@
   <%- include('fragmentos/head'); %> 
 <body class="index-page sidebar-collapse">
   <!-- Navbar -->
+  <script type="text/javascript">
+  var moment = require('moment');
+
+</script>
   <%- include('fragmentos/navbar'); %> 
 
     <div class="section section-buttons section section-dark" style="background-image: url('assets/img/repeat.png');">
@@ -24,16 +28,17 @@
     <textarea name="publication" id="publication" style="margin-left: 0%; margin-bottom: 0%;margin-top: 0%; background-color: 000" rows="2" placeholder="Agrega tu comentario" required="" class="text-white form-control h5 text-black"></textarea></div><div style="margin-left: 0%; margin-bottom: 0%" class="form-group ml-auto"><button href="#" type="submit" style="background-color: 000;
  margin-top: -3%" class="btn submit btn-warning mr-auto" style="background-color: fff">Publicar<div class="fa fa-post"></div></button></div></form></div></div>
 <br>
-<div class="container  col-md-9 " style="background-color: 000; opacity: 0.75">
+<div class="container  col-md-9 " style="background-color: 000; opacity: 0.87">
 
 
 <% for(var i=0;i<publish.length;i++) { %>
+
        <br>
   <div  class="card ">
     <div class="container" style="margin-left: 15px">
       <br>
     <strong class=" h6" ><%= publish[i].nombre %></strong> <br><b><%= publish[i].correo %></b> <br><br>
-    <b class="h5"><%= publish[i].publish %></b>
+    <b class="h5"><%= publish[i].publish %></b><br>
     <br>
     <br>
   </div>
