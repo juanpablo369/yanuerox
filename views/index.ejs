@@ -27,6 +27,9 @@
         </div>
         <h2 style="margin-top: -3px" class="presentation-subtitle text-center">Acciona tus sentidos</h2>
       </div>
+
+    
+
     </div>
   </div>
     <div class="section section-buttons section section-dark"style="background-image: url('assets/img/repeat.png'); ">
@@ -53,6 +56,9 @@
     <form>
       <br>
     <div class=" bg-transparent col-md-9 ml-auto mr-auto">
+      
+
+
 
    <h3 class="text-white">Open Bar:</h3>
           <ul>
@@ -75,80 +81,11 @@
 
 
 <!--
-            <div class="col-md-6 ml-auto mr-auto">
-            <div class="profile-tabs">
-              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link" href="#cocteles" role="tab" data-toggle="tab" aria-selected="false">
-                    <i class="material-icons"></i> Cocteles
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#yanua" role="tab" data-toggle="tab" aria-selected="false">
-                    <i class="material-icons"></i> Yanua
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active show" href="#videos" role="tab" data-toggle="tab" aria-selected="true">
-                    <i class="material-icons"></i> Videos
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active show" href="#eventos" role="tab" data-toggle="tab" aria-selected="false">
-                    <i class="material-icons"></i> Eventos
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        -->
 
 
-          <div class="tab-content tab-space">
-          <div class="tab-pane text-center gallery" id="cocteles">
-            <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="assets/img/cocteles/c2.jpg" class="rounded">
-                <img src="assets/img/cocteles/c2.jpg" class="rounded">
-              </div>
-              <div class="col-md-3 mr-auto">
-                <img src="assets/img/cocteles/c2.jpg" class="rounded">
-                <img src="assets/img/cocteles/c2.jpg" class="rounded">
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane text-center gallery" id="works">
-            <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="assets/img/cocteles/c4.jpg" class="rounded">
-                <img src="./assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-                <img src="./assets/img/examples/cynthia-del-rio.jpg" class="rounded">
-              </div>
-              <div class="col-md-3 mr-auto">
-                <img src="./assets/img/examples/mariya-georgieva.jpg" class="rounded">
-                <img src="./assets/img/examples/clem-onojegaw.jpg" class="rounded">
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane text-center gallery active show" id="favorite">
-            <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="./assets/img/examples/mariya-georgieva.jpg" class="rounded">
-                <img src="./assets/img/examples/studio-3.jpg" class="rounded">
-              </div>
-              <div class="col-md-3 mr-auto">
-                <img src="./assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-                <img src="./assets/img/examples/olu-eletu.jpg" class="rounded">
-                <img src="./assets/img/examples/studio-1.jpg" class="rounded">
-              </div>
-            </div>
-          </div>
-        </div>
 
-            <div class="col-md-13 ml-auto mr-auto bg-transparent" >
-              <iframe  class="card bg-transparent mr-auto ml-auto" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4336.688431365856!2d-78.58341360486318!3d-3.625990925821618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2sec!4v1568180908047!5m2!1ses!2sec" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </div>
-<br>
-        --><br>
+        <br>
           </div>
   
      <ul class="col-md-9 mx-auto nav nav-pills nav-pills-icons justify-content-center" role="tablist">
@@ -159,14 +96,57 @@
             <a class="nav-link h3" title="Síguenos en Facebook" data-placement="left" href="https://www.facebook.com/Yanua-Bar-Discoteca-279815565372413" target="_blank">
               <i class="fa fa-facebook-square"></i>
               <p class="text-primary">Facebook</p>
-            </a><form><iframe class="ml-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7727.162091859452!2d-78.58422955471676!3d-3.6261449546933564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cc7fdcd7d85c27%3A0x8336b86a5b2424dd!2sYanua%20Bar%20Discoteca!5e0!3m2!1ses!2sec!4v1568667247955!5m2!1ses!2sec" width="250" height="230" frameborder="0" style="border:0;" allowfullscreen=""></iframe><br>
-            <b>Nuestra ubicación en el mapa</b></form>
+            </a>
             
                
 <br>  
-            
+</ul>
 
-              </ul>
+     <% if (new Date().getDay()== 1) {  %> 
+
+      <h3 class="text-white text-center">Buen Inicio de semana Yanueros!</h3>
+      <% }else if(new Date().getDay()== 2){ %>
+
+      <h3 class="text-white text-center">Excelente martes!</h3>
+      <% }else if(new Date().getDay()== 3){ %>
+
+     <% }else if(new Date().getDay()== 4){ %>
+
+     <div class="card gallery bg-transparent" >
+  <ul class="text-center">
+<img class="figure2" src="./assets/img/fotos/days/j.jpg">
+<img class="figure2" src="./assets/img/fotos/days/j2.jpg"></ul>
+</div>
+<h3 class="text-center text-white">Jueves no te ahueves!!!</h3>
+
+     <% }else if(new Date().getDay()== 5){ %>
+     <div class="card gallery bg-transparent" >
+  <ul class="text-center">
+<img class="figure2" src="./assets/img/fotos/days/v.jpg">
+<img class="figure2" src="./assets/img/fotos/days/v1.jpg">
+<img class="figure2" src="./assets/img/fotos/days/v2.jpg">
+
+</ul>
+</div>
+<h3 class="text-center text-white">Es viernes y el cuerpo lo sabe!!</h3>
+
+
+     <% }else if(new Date().getDay()== 6){ %>
+     <div class="card gallery bg-transparent" >
+  <ul class="text-center">
+<img class="figure2" src="./assets/img/fotos/days/s1.jpg">
+<img class="figure2" src="./assets/img/fotos/days/s.jpg"></ul>
+</div>
+<h3 class="text-center">Sábado de rumba, si señor!!</h3>
+
+     <% }else if(new Date().getDay()== 0){ %>
+     <h4 class="">Domingo</h4>
+
+     <% }else{%>
+     <% }%>
+     <br>
+  <form  class="text-center"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7727.162091859452!2d-78.58422955471676!3d-3.6261449546933564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cc7fdcd7d85c27%3A0x8336b86a5b2424dd!2sYanua%20Bar%20Discoteca!5e0!3m2!1ses!2sec!4v1568667247955!5m2!1ses!2sec" width="250" height="230" frameborder="0" style="border:0;" allowfullscreen=""></iframe><br>
+            <b>Nuestra ubicación en el mapa</b></form>
               <br>
               <br>
               <!-- 

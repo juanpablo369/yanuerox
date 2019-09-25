@@ -11,6 +11,13 @@ figure {
  overflow: hidden;
  position: relative;
 }
+.figure2 {
+ width: 300;
+ height: 150;
+ margin: 3px;
+ overflow: hidden;
+ position: relative;
+}
 figure img {
   width: 100%;
 
