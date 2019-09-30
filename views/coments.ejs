@@ -17,7 +17,12 @@
 
 <br>
 
-<div style="margin-top: 60px" class="col-md-7 mr-auto ml-auto wizard-card" >
+<br>
+
+<div class="container  col-md-9 " style="background-image: url(' assets/img/wall.png');">
+
+
+<div style="margin-top: 60px;" class="col-md-7 mr-auto ml-auto wizard-card" >
   <div class="card-body">
   <form action="/coments" method="POST"><div class="form-group">
   </div><div class="form-group">
@@ -26,15 +31,12 @@
     <input name="correo" type="email" class="h7 text-white" style="background-color: 000" placeholder="Correo electrónico" id="correo" required='true'>
     <br><br>
     <textarea name="publication" id="publication" style="margin-left: 0%; margin-bottom: 0%;margin-top: 0%; background-color: 000" rows="2" placeholder="Agrega tu comentario" required="" class="text-white form-control h5 text-black"></textarea></div><div style="margin-left: 0%; margin-bottom: 0%" class="form-group ml-auto"><button href="#" type="submit" style="background-color: 000;
- margin-top: -3%" class="btn submit btn-warning mr-auto" style="background-color: fff">Publicar<div class="fa fa-post"></div></button></div></form></div></div>
+ margin-top: -3%" class="btn submit btn-warning mr-auto" >Publicar<div class="fa fa-post"></div></button></div></form></div></div>
 <br>
-<div class="container  col-md-9 " style="background-color: 000; opacity: 0.87">
-
-
 <% for(var i=0;i<publish.length;i++) { %>
 
        <br>
-  <div  class="card ">
+  <div  class="card col-md-7 mx-auto" style="opacity: 0.78">
     <div class="container" style="margin-left: 15px">
       <br>
     <strong class=" h6" ><%= publish[i].nombre %></strong> <br><b><%= publish[i].correo %></b> <br><br>
