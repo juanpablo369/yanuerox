@@ -19,24 +19,33 @@
 
 <br>
 
-<div class="container  col-md-9 " style="background-image: url(' assets/img/wal.png');">
+<div class="container card-x  col-md-9" style="background-image: url(' assets/img/wall.png');">
 
 
-<div style="margin-top: 60px;" class="col-md-7 mr-auto ml-auto wizard-card" >
-  <div class="card-body">
-  <form action="/coments" method="POST"><div class="form-group">
-  </div><div class="form-group">
+<div style="margin-top:0px;" class=" mr-auto ml-auto wizard-card" >
+  <div class="card-body"><form action="/coments" method="POST">
     <br>
-    <input name="nombre" type="text" class="h7 text-white" style="background-color: 000" placeholder="Ingresa tu nombre" id="nombre"  required='true'>
-    <input name="correo" type="email" class="h7 text-white" style="background-color: 000" placeholder="Correo electrónico" id="correo" required='true'>
-    <br><br>
-    <textarea name="publication" id="publication" style="margin-left: 0%; margin-bottom: 0%;margin-top: 0%; background-color: 000" rows="2" placeholder="Agrega tu comentario" required="" class="text-white form-control h5 text-black"></textarea></div><div style="margin-left: 0%; margin-bottom: 0%" class="form-group ml-auto"><button href="#" type="submit" style="background-color: 000;
- margin-top: -3%" class="btn submit btn-warning mr-auto" >Publicar<div class="fa fa-post"></div></button></div></form></div></div>
+    <div class=" card-body text-dark" style="width: 100%">
+
+      <br>
+      <div class="mx-auto row">
+        <input name="nombre"  class="h7 col-md-6 " style="background-color: fff" placeholder="Ingresa tu nombre" id="nombre"  required='true'>
+        <input 
+        name="correo" 
+        type="email" 
+        class="h7 col-md-6 " 
+        style="background-color: fff; margin-top:3px" 
+        placeholder="Correo electrónico" id="correo" required='true'>
+      </div>
+      <br>
+
+    <textarea name="publication" id="publication" style="margin-left: 0%; margin-bottom: 0%;margin-top: 0%; background-color: fff" rows="2" placeholder="Agrega tu comentario" required="" class="text-dark form-control h5 col-md-9 "></textarea><div style="margin-left: 0%; margin-bottom: 0%" class="form-group ml-auto"><button href="#" type="submit" style=" margin-top: 1%" class="btn submit btn-success mr-auto" >Publicar<div class="fa fa-post"></div></button></div></div></form>
+  </div></div>
 <br>
 <% for(var i=0;i<publish.length;i++) { %>
 
        <br>
-  <div  class="card bg-transparent text-white col-md-7 mx-auto" style="background-image: url(' assets/img/wall4.png');opacity: 0.98">
+  <div  class="card text-white col-md-7 mx-auto" style="background-color:000;opacity: 0.98">
     <div class="container" style="margin-left: 15px">
       <br>
     <strong class=" h6" ><%= publish[i].nombre %></strong> <br><b><%= publish[i].correo %></b> <br><br>
@@ -78,8 +87,6 @@
             </span>
 </div>
 </div>
-</div>
-
 </body>
 
 </html>
