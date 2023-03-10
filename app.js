@@ -20,7 +20,8 @@ var app = express();
 // database//
 const { database } = require('./database');
 mongoose.connect(database.URI, {
-  useNewUrlParser: true    
+  useNewUrlParser: true,
+  useUnifiedTopology: true 
 })
   .then(db => console.log('base de datos conectada'))
   .catch(err => console.log(err));
