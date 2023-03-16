@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-const MongoClient = require("mongodb").MongoClient;
 var flash = require('connect-flash');
 var session = require('express-session');
 
@@ -19,11 +18,15 @@ var app = express();
 
 
 // database//
-const { database } = require('./database.js'); 
-  MongoClient.connect(database.URI, {useUnifiedTopology: true }, (err, client) => {
-    if (err) console.log("Error occurred connecting to MongoDB...");
-    console.log("Connected to MongoDB!");
-  });
+const { database } = require('./database.js');
+mongoose.connect(database.URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true 
+})
+  .then(db => console.log('base de datos conectada'))
+  .catch(err => console.log('ha ocurrido un error,',err));
+
+
 
 require('./config/passport');
 // view engine setup
